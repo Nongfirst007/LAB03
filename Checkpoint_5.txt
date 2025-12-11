@@ -1,0 +1,60 @@
+CHECKPOINT : 682115005 KITIPHOOM PHOOMSAARD
+--------------------------------------------------------------------------------------------------------------------------
+
+Part 2.5 Checkpoint Questions (write your answers in text)
+Answer these in a separate text/Word file or at the end of your lab report:
+
+    a. In your own words, explain how filter is used in getActiveStudents.
+        --> The filter function goes through every student in the array and keeps only the students 
+            whose isActive value is true. It returns a new array that contains only the active students.
+
+    b. In your own words, explain how reduce is used in calculateAverageGrade.
+        --> The reduce function adds up all the students’ grades by starting from 0 and then adding each grade one by one. 
+            After that, the total is divided by the number of students to get the average grade.
+
+    c. What TypeScript error do you get if you remove isActive from one of the students in the array?
+        --> TypeScript shows an error saying that the property isActive is missing in that student object.
+
+        i. Why is this error helpful before running the code?
+            --> It is helpful because it warns us early that our data is incomplete, 
+                so we can fix it before the program runs and causes unexpected bugs.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Part 3.4 Checkpoint Questions (Write your answers) 
+    1. In JSON.stringify(getActiveStudents(students), null, 2), what does each argument mean? 
+        1. First argument: 
+            --> The data we want to convert into a JSON string.
+        2. Second argument (null): 
+            --> A replacer, but using null means “don’t change anything.”
+        3. Third argument (2): 
+            --> The number of spaces used for indentation to make the JSON easier to read.
+
+
+    2. If the JSON string is missing the grade field for one student, what could happen 
+    when you parse and use it in TypeScript?
+        --> The grade will become undefined, which may cause the average calculation to be wrong 
+        (for example, result in NaN). TypeScript may also warn that the data does not match the expected type.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Part 5 -- Wrap up Questions (3 Points)
+Answer the following questions (in the same document where you wrote previous answers):
+
+    1. What is the difference between a JavaScript object in a .ts/.js file and JSON in a .json file?
+        --> A JavaScript object is a real object used inside the program and can contain things like functions, 
+        undefined, or other complex values. JSON is only text used for storing or sending data and must follow 
+        strict formatting rules.
+
+    2. Why is it better to use a specific type like Student instead of any when working with parsed JSON data?
+        --> Using a specific type helps TypeScript check that the data is correct. It warns us if a 
+        field is missing or has the wrong type. If we use any, TypeScript cannot help us catch these mistakes.
+
+    3. What are the two main functions used to convert between JSON text and JavaScript/TypeScript objects?
+        --> The two functions are:
+                JSON.parse() to convert JSON text into an object
+                JSON.stringify() to convert an object back into JSON text
+
+
+--------------------------------------------------------------------------------------------------------------------------
